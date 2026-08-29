@@ -7,6 +7,10 @@ Perbandingan algoritma **Decision Tree**, **Random Forest**, dan **Support Vecto
 - Menyerap Informasi (Visual vs Verbal)
 - Memahami Informasi (Sequential vs Global)
 
+## Abstrak
+
+Memahami gaya belajar mahasiswa dapat membantu penyesuaian metode dan media pembelajaran agar lebih efektif. Penelitian ini membangun model klasifikasi gaya belajar berdasarkan model FSLSM menggunakan data kuesioner dari mahasiswa, dengan fitur berupa data demografis (jenis kelamin, pendapatan orang tua, kabupaten asal, jurusan sekolah), akademik (IPK), dan kebiasaan belajar (durasi belajar, media pembelajaran yang disukai). Data diproses melalui tahap cleansing dan transformation, kemudian dilakukan penyeimbangan kelas dengan SMOTE pada data latih sebelum tiga algoritma klasifikasi — Decision Tree, Random Forest, dan SVM — dilatih dan diuji dengan skema split 80:20 serta divalidasi menggunakan cross-validation 5-fold. Hasil pengujian menunjukkan Random Forest secara konsisten memberikan performa terbaik di antara ketiga algoritma pada keempat dimensi FSLSM, dengan akurasi berkisar 64%–79%, diikuti oleh Decision Tree dan SVM. Hasil lengkap evaluasi (accuracy, precision, recall, F1-score) dan visualisasi confusion matrix tersedia pada folder `hasil/`.
+
 ## Struktur Folder
 
 ```
@@ -40,7 +44,7 @@ klasifikasi-gaya-belajar-mahasiswa/
    ```bash
    pip install -r requirements.txt
    ```
-3. Buka `notebook/klasifikasi_gaya_belajar.ipynb` di Google Colab, lalu jalankan sel secara berurutan.
+3. Buka `notebook/klasifikasi_gaya_belajar.ipynb` di Jupyter/Google Colab, lalu jalankan sel secara berurutan.
 
 ## Metodologi Singkat
 
@@ -57,5 +61,5 @@ Dataset yang dipublikasikan (`dataset_clean.csv`) sudah **tidak menyertakan** na
 
 ## Kontributor
 
-- Salzabila Triana 
+- Salzabila Triana
 
