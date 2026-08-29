@@ -63,3 +63,6 @@ Dataset yang dipublikasikan (`dataset_clean.csv`) sudah **tidak menyertakan** na
 
 - Salzabila Triana
 
+## Lisensi
+
+Project ini dibuat untuk keperluan tugas akhir skripsi
