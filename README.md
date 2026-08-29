@@ -59,9 +59,9 @@ klasifikasi-gaya-belajar-mahasiswa/
 
 Dataset yang dipublikasikan (`dataset_clean.csv`) sudah **tidak menyertakan** nama lengkap, email, NIM, tempat lahir, dan tanggal lahir responden untuk menjaga privasi mahasiswa yang berpartisipasi.
 
-## Kontributor
+## Author
 
-- Salzabila Triana
+Salzabila Triana ([@zalana0](https://github.com/zalana0))
 
 ## Lisensi
 
