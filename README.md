@@ -1,68 +1,60 @@
-# Klasifikasi Gaya Belajar Mahasiswa
+# Student Learning Style Classification
 
-Perbandingan algoritma **Decision Tree**, **Random Forest**, dan **Support Vector Machine (SVM)** untuk klasifikasi preferensi gaya belajar mahasiswa berdasarkan model **FSLSM (Felder-Silverman Learning Style Model)**, pada 4 dimensi:
+Comparison of **Decision Tree**, **Random Forest**, and **Support Vector Machine (SVM)** algorithms for classifying student learning style preferences based on the **FSLSM (Felder-Silverman Learning Style Model)**, across 4 dimensions:
+- Processing Information (Active vs Reflective)
+- Perceiving Information (Sensing vs Intuitive)
+- Receiving Information (Visual vs Verbal)
+- Understanding Information (Sequential vs Global)
 
-- Memproses Informasi (Active vs Reflective)
-- Menerima Informasi (Sensing vs Intuitive)
-- Menyerap Informasi (Visual vs Verbal)
-- Memahami Informasi (Sequential vs Global)
+## Abstract
+Understanding students' learning styles can help tailor teaching methods and learning media to be more effective. This research builds a learning style classification model based on the FSLSM model using questionnaire data from students, with features including demographic data (gender, parental income, home regency, high school major), academic data (GPA), and study habits (study duration, preferred learning media). The data was processed through cleansing and transformation stages, followed by class balancing using SMOTE on the training data, before three classification algorithms — Decision Tree, Random Forest, and SVM — were trained and tested using an 80:20 split scheme and validated using 5-fold cross-validation. Test results show that Random Forest consistently delivered the best performance among the three algorithms across all four FSLSM dimensions, with accuracy ranging from 64%–79%, followed by Decision Tree and SVM. Complete evaluation results (accuracy, precision, recall, F1-score) and confusion matrix visualizations are available in the `hasil/` folder.
 
-## Abstrak
-
-Memahami gaya belajar mahasiswa dapat membantu penyesuaian metode dan media pembelajaran agar lebih efektif. Penelitian ini membangun model klasifikasi gaya belajar berdasarkan model FSLSM menggunakan data kuesioner dari mahasiswa, dengan fitur berupa data demografis (jenis kelamin, pendapatan orang tua, kabupaten asal, jurusan sekolah), akademik (IPK), dan kebiasaan belajar (durasi belajar, media pembelajaran yang disukai). Data diproses melalui tahap cleansing dan transformation, kemudian dilakukan penyeimbangan kelas dengan SMOTE pada data latih sebelum tiga algoritma klasifikasi — Decision Tree, Random Forest, dan SVM — dilatih dan diuji dengan skema split 80:20 serta divalidasi menggunakan cross-validation 5-fold. Hasil pengujian menunjukkan Random Forest secara konsisten memberikan performa terbaik di antara ketiga algoritma pada keempat dimensi FSLSM, dengan akurasi berkisar 64%–79%, diikuti oleh Decision Tree dan SVM. Hasil lengkap evaluasi (accuracy, precision, recall, F1-score) dan visualisasi confusion matrix tersedia pada folder `hasil/`.
-
-## Struktur Folder
-
+## Folder Structure
 ```
 klasifikasi-gaya-belajar-mahasiswa/
 │
 ├── notebook/
-│   ├── klasifikasi_gaya_belajar.ipynb   # Notebook utama (preprocessing + pemodelan)
-│   └── preprocessing.py                 # Modul tahap data cleansing & transformation
+│   ├── klasifikasi_gaya_belajar.ipynb   # Main notebook (preprocessing + modeling)
+│   └── preprocessing.py                 # Module for data cleansing & transformation
 │
 ├── dataset/
-│   └── dataset_clean.csv                # Dataset hasil preprocessing (identitas responden dihapus)
+│   └── dataset_clean.csv                # Preprocessed dataset (respondent identity removed)
 │
 ├── hasil/
 │   ├── confusion_matrix/                # Confusion matrix per model
-│   ├── decision_tree/                   # Visualisasi pohon keputusan
-│   ├── grafik_lainnya/                  # Grafik performa & perbandingan model
-│   └── evaluasi_model.csv               # Ringkasan akurasi, precision, recall, F1-score
+│   ├── decision_tree/                   # Decision tree visualizations
+│   ├── grafik_lainnya/                  # Performance charts & model comparisons
+│   └── evaluasi_model.csv               # Summary of accuracy, precision, recall, F1-score
 │
 ├── requirements.txt
 └── README.md
 ```
 
-## Cara Menjalankan
-
-1. Clone repository ini
+## How to Run
+1. Clone this repository
    ```bash
    git clone https://github.com/zalana0/klasifikasi-gaya-belajar-mahasiswa.git
    cd klasifikasi-gaya-belajar-mahasiswa
    ```
-2. Install dependency
+2. Install dependencies
    ```bash
    pip install -r requirements.txt
    ```
-3. Buka `notebook/klasifikasi_gaya_belajar.ipynb` di Jupyter/Google Colab, lalu jalankan sel secara berurutan.
+3. Open `notebook/klasifikasi_gaya_belajar.ipynb` in Jupyter/Google Colab, then run the cells in order.
 
-## Metodologi Singkat
+## Brief Methodology
+- **Data cleansing**: name case folding, duplicate data removal
+- **Data transformation**: column renaming, FSLSM label mapping, major & regency standardization, label encoding, ordinal encoding for income & study duration, GPA encoding, multi-label binarization for learning media, normalization (StandardScaler)
+- **Data split**: 80:20 stratified
+- **Class balancing**: SMOTE (training data only)
+- **Validation**: 5-fold cross-validation
+- **Algorithms**: Random Forest (200 trees), Decision Tree (CART, max_depth=5), SVM (RBF, C=10)
 
-- **Data cleansing**: case folding nama, penghapusan data duplikat
-- **Data transformation**: rename kolom, mapping label FSLSM, standarisasi jurusan & kabupaten, label encoding, ordinal encoding pendapatan & durasi belajar, encoding IPK, multi-label binarization media pembelajaran, normalisasi (StandardScaler)
-- **Split data**: 80:20 stratified
-- **Balancing kelas**: SMOTE (hanya pada data latih)
-- **Validasi**: Cross-validation 5-fold
-- **Algoritma**: Random Forest (200 pohon), Decision Tree (CART, max_depth=5), SVM (RBF, C=10)
-
-## Catatan Privasi
-
-Dataset yang dipublikasikan (`dataset_clean.csv`) sudah **tidak menyertakan** nama lengkap, email, NIM, tempat lahir, dan tanggal lahir responden untuk menjaga privasi mahasiswa yang berpartisipasi.
+## Privacy Note
+The published dataset (`dataset_clean.csv`) **does not include** respondents' full names, emails, student ID numbers, place of birth, or date of birth, in order to protect the privacy of participating students.
 
 ## Author
-
 Salzabila Triana ([@zalana0](https://github.com/zalana0))
 
-## Lisensi
-
-Project ini dibuat untuk keperluan tugas akhir skripsi
+## License
+This project was created for undergraduate thesis (skripsi) purposes.
