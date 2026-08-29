@@ -1,0 +1,13 @@
+Dimensi,Model,Accuracy,Precision,Recall,F1-Score
+Memproses (Active vs Reflective),Random Forest,0.6667,0.5455,0.5396,0.5406
+Memproses (Active vs Reflective),Decision Tree,0.5952,0.5409,0.5499,0.5361
+Memproses (Active vs Reflective),SVM,0.5238,0.5011,0.5015,0.4815
+Menerima (Sensing vs Intuitive),Random Forest,0.7381,0.6313,0.6219,0.6259
+Menerima (Sensing vs Intuitive),Decision Tree,0.6429,0.5965,0.6281,0.5906
+Menerima (Sensing vs Intuitive),SVM,0.6429,0.5504,0.5594,0.551
+Menyerap (Visual vs Verbal),Random Forest,0.6429,0.5821,0.5714,0.5729
+Menyerap (Visual vs Verbal),Decision Tree,0.5476,0.5,0.5,0.4997
+Menyerap (Visual vs Verbal),SVM,0.5238,0.4643,0.4643,0.4643
+Memahami (Sequential vs Global),Random Forest,0.7857,0.6189,0.5809,0.5905
+Memahami (Sequential vs Global),Decision Tree,0.6667,0.5062,0.5074,0.5051
+Memahami (Sequential vs Global),SVM,0.7381,0.5054,0.5037,0.4995
