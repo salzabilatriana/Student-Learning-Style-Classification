@@ -54,7 +54,7 @@ klasifikasi-gaya-belajar-mahasiswa/
 The published dataset (`dataset_clean.csv`) **does not include** respondents' full names, emails, student ID numbers, place of birth, or date of birth, in order to protect the privacy of participating students.
 
 ## Author
-Salzabila Triana ([@zalana0](https://github.com/salzabilatriana))
+Salzabila Triana (https://github.com/salzabilatriana)
 
 ## License
 This project was created for undergraduate thesis (skripsi) purposes.
